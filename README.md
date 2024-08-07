@@ -34,6 +34,6 @@ containers:
       - 0.0.0.0 
 ```
 
-The llama.cpp server generally supports the OpenAI API (completion endpoint). I tested it out with curl but it seems like it can be used with some packages (autogen). The performance I got in this setup was reported by the server as ~7 tokens per second. 
+The llama.cpp server generally supports the OpenAI API (completion endpoint). I tested it out with curl but it seems like it can be used with some packages (autogen). The performance I got in this setup was reported by the server as ~7 tokens per second using CPU. 
 
 
