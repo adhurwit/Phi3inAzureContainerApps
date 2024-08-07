@@ -6,7 +6,7 @@ This is a quick, rough guide on running a SLM (Phi3) in Azure Container Apps wit
 
 I used the mini Phi3 which is quantized (4bits) in GGUF format, available here [Phi3 mini GGUF](https://huggingface.co/microsoft/Phi-3-mini-4k-instruct-gguf) 
 
-After downloading, I put the model in an Azure Files share. For this and the rest of setting this set-up, I generally followed this tutorial [Tutorial: Create an Azure Files volume mount in Azure Container Apps](https://learn.microsoft.com/en-us/azure/container-apps/storage-mounts-azure-files?tabs=bash)
+After downloading, I put the model in an Azure Files share. This means that the model is available to any replica that spins up, the container image stays light, and you can easily add other models into the share. For this and the rest of setting this set-up, I generally followed this tutorial [Tutorial: Create an Azure Files volume mount in Azure Container Apps](https://learn.microsoft.com/en-us/azure/container-apps/storage-mounts-azure-files?tabs=bash)
 
 ## llama.cpp server container
 
