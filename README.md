@@ -16,9 +16,23 @@ You will need to gain access to the GitHub package. (I had to use a version from
 
 ## Modify the Azure Container App 
 
-I created a consumption Azure Container App according to the tutorial above, and then I just had to make sure that the command and args were set properly. This needs to be done via YAML. I used the Azure console built-in to the Portal. 
+I created a consumption Azure Container App according to the tutorial above, and then I just had to make sure that the command and args were set properly. This needs to be done via YAML. I used the Azure console built-in to the Portal to get and update per the tutorial above. For this model, it seems 2 core and 4GB were the right amount. 
 
-For this model, it seems 2 core and 4GB were the right amount. 
+This is the relevant YAML: 
+`
+containers:
+    - command:
+      - "/llama-server"
+      args:
+      - "-m"
+      - /models/Phi-3-mini-4k-instruct-q4.gguf
+      - "-c"
+      - 4096
+      - "--port"
+      - 80
+      - "--host"
+      - 0.0.0.0 
+`
 
 The llama.cpp server generally supports the OpenAI API (completion endpoint). I tested it out with curl but it seems like it can be used with some packages (autogen). The performance I got in this setup was reported by the server as ~7 tokens per second. 
 
