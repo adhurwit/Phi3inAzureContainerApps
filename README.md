@@ -12,7 +12,7 @@ After downloading, I put the model in an Azure Files share. For this and the res
 
 I used the llama-server container built and published as part of llama.cpp. [LLaMA.cpp HTTP Server](https://github.com/ggerganov/llama.cpp/blob/master/examples/server/README.md) 
 
-You will need to gain access to the GitHub package. (I had to use a version from a couple of weeks ago because of a sliding window issue that may be fixed now.) [llama.cpp server] (https://github.com/ggerganov/llama.cpp/pkgs/container/llama.cpp/244188617?tag=server--b1-37b12f9)
+You will need to gain access to the GitHub package. (I had to use a version from a couple of weeks ago because of a sliding window issue that may be fixed now.) [llama.cpp server](https://github.com/ggerganov/llama.cpp/pkgs/container/llama.cpp/244188617?tag=server--b1-37b12f9)
 
 ## Modify the Azure Container App 
 
