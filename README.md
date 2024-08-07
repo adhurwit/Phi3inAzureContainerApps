@@ -10,13 +10,11 @@ After downloading, I put the model in an Azure Files share. This means that the 
 
 ## llama.cpp server container
 
-I used the llama-server container built and published as part of llama.cpp. [LLaMA.cpp HTTP Server](https://github.com/ggerganov/llama.cpp/blob/master/examples/server/README.md) 
-
-You will need to gain access to the GitHub package. (I had to use a version from a couple of weeks ago because of a sliding window issue that may be fixed now.) [llama.cpp server--b1-37b12f9](https://github.com/ggerganov/llama.cpp/pkgs/container/llama.cpp/244188617?tag=server--b1-37b12f9)
+I used the llama-server container built and published as part of llama.cpp. [LLaMA.cpp HTTP Server](https://github.com/ggerganov/llama.cpp/blob/master/examples/server/README.md)  You will need to gain access/authorization to the GitHub package. (I also had to use a version from a couple of weeks ago because of a sliding window issue that may be fixed now.) [llama.cpp server--b1-37b12f9](https://github.com/ggerganov/llama.cpp/pkgs/container/llama.cpp/244188617?tag=server--b1-37b12f9)
 
 ## Modify the Azure Container App 
 
-I created a consumption Azure Container App according to the tutorial above, and then I just had to make sure that the command and args were set properly. This needs to be done via YAML. I used the Azure console built-in to the Portal to get and update per the tutorial above. For this model, it seems 2 core and 4GB were the right amount. 
+I created a consumption Azure Container App according to the tutorial above, and then I just had to make sure that the command and args were set properly. This needs to be done via YAML. I used the Azure console built-in to the Portal to get and update per the tutorial. For this model, I used 2 core and 4GB which seemed the right amount. 
 
 This is the relevant YAML: 
 ```
@@ -34,6 +32,6 @@ containers:
       - 0.0.0.0 
 ```
 
-The llama.cpp server generally supports the OpenAI API (completion endpoint). I tested it out with curl but it seems like it can be used with some packages (autogen). The performance I got in this setup was reported by the server as ~7 tokens per second using CPU. 
+The llama.cpp server generally supports the OpenAI API (completion endpoint). I tested it out with curl but it seems like it can be used with some packages (AutoGen). The performance I got in this setup was reported by the server as ~7 tokens per second using CPU. 
 
 
